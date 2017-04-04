@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.semm.core.servicios">
+	<class
+		name="SesionLog"
+		table="sesionlog"
+
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="tlf"
+			type="string"
+		>
+		<column name="tlf" ></column>
+		
+		</id>
+		
+			<many-to-one
+			name="usuario"
+			column="usuario"
+			class="Usuario"
+			cascade="none"
+			
+		>
+		</many-to-one>
+		
+
+		<property
+			name="servicio"
+			column="servicio"
+			type="string"
+			length="64"
+		/>
+		
+		<property name="revocable" column="revocable" type="boolean"/>
+		<property
+			name="servicio_pred"
+			column="servicio_pred"
+			type="string"
+			length="64"
+		/>
+	
+		
+	</class>	
+</hibernate-mapping>

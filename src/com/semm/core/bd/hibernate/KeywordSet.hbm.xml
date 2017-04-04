@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.semm.core.servicios">
+	<class name="KeywordSet" table="keywordset">
+		
+		    <id name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		  >
+			<generator class="sequence">
+                <param name="sequence">kw_seq</param>
+            </generator>
+		</id>
+		
+		<many-to-one name="cnx" class="com.semm.core.conexiones.Conexion" cascade="none"  not-null="true"> </many-to-one>
+		<map name="keywords" table="keywordset_usuarios" cascade="none" lazy="false">
+		 	<key column="kwset" not-null="true"></key>
+		 	<index column="expresion" type="string" ></index>
+		 	<composite-element  class="UserService" >
+		 		<property name="svc" type="string"></property>
+		 		<many-to-one  name="usuario" class="Usuario" cascade="none" />
+		 	</composite-element>
+		</map>
+
+		
+	
+		
+	</class>	
+</hibernate-mapping>

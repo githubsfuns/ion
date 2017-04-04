@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones.bb">
+	<joined-subclass
+		name="ConexionBlackberryPush"
+		table="conexionblackberrypush"
+		extends="com.semm.core.conexiones.Conexion" >
+		
+		<key column="id"/>
+	
+		<property name="_serviceId" column="_serviceId" type="string" not-null="true" />
+		<property name="_password" column="_password" type="string" />
+		<property name="_bisServer" column="_bisServer" type="string" />
+		
+		<property name="proxyh" column="proxyh" type="string"/>
+		<property name="port" column="port" type="int"  />
+
+	</joined-subclass>	
+</hibernate-mapping>

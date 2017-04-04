@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.semm.core.servicios.cvmed">
+	<class
+		name="Aceptacion"
+		table="aceptacion"
+
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id>
+			<key-many-to-one name="visita" column="visita"  ></key-many-to-one>
+			<key-many-to-one name="producto" column="producto" ></key-many-to-one>
+		</composite-id>
+		
+
+
+		<property
+			name="na"
+			column="na"
+			type="integer"
+		/>
+		
+	
+		
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.servicios">
+	<class
+		name="MensajePorProcesar"
+		table="mensajepp"
+
+	>
+		
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+		<generator class="sequence">
+                <param name="sequence">msgpp_sequence</param>
+            </generator>
+		</id>
+		
+			<property
+			name="recips"
+			column="recips"
+			type="string"
+	
+		/>
+		
+		<property
+			name="data"
+			column="data"
+			type="string"
+	
+		/>
+		
+
+		<property
+			name="fechahora"
+			column="fechahora"
+			type="timestamp"
+			not-null="true"
+		/>
+	
+	
+		<property
+			name="servicio"
+			column="servicio"
+			type="string"
+	
+			length="64"
+		/>
+		
+		<property
+			name="cliente"
+			column="cliente"
+			type="string"
+	
+			
+		/>
+
+	
+		
+		<property
+			name="tipo"
+			column="tipo"
+			type="int"
+			not-null="true"
+			length="1"
+		/>
+		
+		<property
+			name="subtipo"
+			column="subtipo"
+			type="int"
+			length="1"
+		/>
+		
+	
+	
+		<many-to-one
+			name="cnx"
+			column="cnx"
+			class="com.semm.core.conexiones.Conexion"
+			cascade="none"
+			
+		>
+		</many-to-one>
+		
+
+		
+	</class>	
+</hibernate-mapping>

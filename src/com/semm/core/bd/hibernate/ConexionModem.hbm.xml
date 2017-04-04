@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones">
+	<joined-subclass
+		name="ConexionModemGSM"
+		table="conexionmodem"
+		extends="com.semm.core.conexiones.Conexion" >
+		
+		<key column="id"/>
+	
+		<property name="port" column="port" type="string" not-null="true" length="16"/>
+		<property name="device" column="device" type="string" length="32"/>
+		<property name="model" column="model" type="string"  length="16"/>
+		
+		<property name="baud" column="baud" type="int" not-null="true"/>
+		<property name="maxlength" column="maxlength" type="int" not-null="true"/>
+		<property name="multipart" column="multipart" type="boolean"/>
+
+	</joined-subclass>	
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones">
+	<joined-subclass
+		name="ConexionModemJMS"
+		table="conexionmodemjms"
+		extends="com.semm.core.conexiones.Conexion" >
+		
+		<key column="id"/>
+	
+		<property name="url" column="url" type="string" not-null="true" />
+		<property name="qname" column="qname" type="string" />
+		<property name="qnameout" column="qnameout" type="string" />
+		<property name="maxlength" column="maxlength" type="int"  />
+		<property name="multipart" column="multipart" type="boolean"/>
+
+
+	</joined-subclass>	
+</hibernate-mapping>

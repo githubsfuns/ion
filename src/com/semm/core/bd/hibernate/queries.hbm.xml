@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!--
+
+Various named queries.
+
+@author Miguel Sucre
+
+-->
+<hibernate-mapping>
+
+
+
+<query name="MensajeDAO.Listar"><![CDATA[from MensajeNombrado where cliente = :user and tipo = :tipo]]></query>
+<!--  <query name="MensajeDAO.Listar2"><![CDATA[Select c.nombre, c.apellido, m.* from Cliente c, (from MensajeLog where cliente = :user and tipo = :tipo order by fechahora DESC limit := limit offset := off) m where c.owner = m.cliente and c.tlf = m.mobile order by m.fechahora desc]]></query>-->
+<query name="MensajeDAO.ListarMobile"><![CDATA[from MensajeNombrado where mobile = :mobile and cliente = :user ]]></query>
+<query name="MensajeProgramadoDAO.Activos"><![CDATA[from MensajeProgramado mp where mp.hora <= SYSDATE]]></query>
+<query name="BloqueadoDAO.Listar"><![CDATA[from NumeroBloqueado where usuario = :user order by fecha desc]]></query>
+<query name="VisitaDAO.Cantidad"><![CDATA[Select day(v.fechahora),count(v) from Visita v where v.estado= :estado and v.rep = :rep and month(v.fechahora) = :mes and year(v.fechahora)  = :ano group by day(v.fechahora) order by day(v.fechahora)]]></query>
+<query name="VisitaDAO.VisitasDelMes"><![CDATA[from Visita v where v.rep = :rep and month(v.fechahora)  = :mes  order by v.fechahora]]></query>
+<query name="VisitaDAO.Vre"><![CDATA[Select v.medico.especialidad,count(v) from Visita v where v.rep =:rep and month(v.fechahora) = :mes and v.estado =:estado group by v.medico.especialidad]]></query>
+<query name="VisitaDAO.Vpe"><![CDATA[Select v.medico.especialidad,count(v) from VProgramada v where v.rep =:rep group by v.medico.especialidad]]></query>
+<query name="VisitaDAO.Acomp"><![CDATA[Select count(*) from Visita v where v.rep =:rep and v.acomp > 0 and month(v.fechahora) = :mes]]></query>
+<query name="VisitaDAO.HojaMedica"><![CDATA[from VProgramada v where v.rep =:rep order by v.medico.especialidad]]></query>
+<query name="VisitaDAO.CantidadMedico"><![CDATA[Select count(*) from Visita v where v.rep =:rep and v.medico = :med and v.estado = :stat and month(v.fechahora) = :mes]]></query>
+<query name="VisitaDAO.UltimoDia"><![CDATA[from Visita v where v.rep =:rep and v.medico = :med and v.estado = :stat and month(v.fechahora) = :mes and day(v.fechahora) = :dia]]></query>
+<query name="VisitaDAOFarmacia.Cantidad"><![CDATA[Select day(v.fechahora),count(v) from VisitaFarmacia v where v.estado= :estado and v.rep = :rep and month(v.fechahora) = :mes group by day(v.fechahora) order by day(v.fechahora)]]></query>
+<query name="VisitaDAOFarmacia.VisitasDelMes"><![CDATA[from VisitaFarmacia v where v.rep = :rep and month(v.fechahora) = :mes  order by v.fechahora]]></query>
+<query name="VisitaDAOFarmacia.Vre"><![CDATA[Select v.farmacia.categoria,count(v) from VisitaFarmacia v where v.rep =:rep and month(v.fechahora) = :mes and v.estado =:estado group by v.farmacia.categoria]]></query>
+<query name="VisitaDAOFarmacia.Vpe"><![CDATA[Select v.farmacia.categoria,count(v) from VProgramadaFarmacia v where v.rep =:rep group by v.farmacia.categoria]]></query>
+<query name="VisitaDAOFarmacia.HojaMedica"><![CDATA[from VProgramadaFarmacia v where v.rep =:rep order by v.farmacia.categoria]]></query>
+<query name="VisitaDAOFarmacia.CantidadFarmacia"><![CDATA[Select count(*) from VisitaFarmacia v where v.rep =:rep and v.farmacia = :far and v.estado = :stat and month(v.fechahora) = :mes]]></query>
+<query name="VisitaDAOFarmacia.UltimoDia"><![CDATA[from VisitaFarmacia v where v.rep =:rep and v.farmacia = :far and v.estado = :stat and month(v.fechahora) = :mes and day(v.fechahora) = :dia]]></query>
+
+
+</hibernate-mapping>

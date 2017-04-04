@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.servicios">
+	<class
+		name="MensajeProgramado"
+		table="programado"
+
+	>
+		
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+		<generator class="sequence">
+                <param name="sequence">prg_sequence</param>
+            </generator>
+		</id>
+
+		<property
+			name="hora"
+			column="hora"
+			type="timestamp"
+			not-null="true"
+		/>
+		
+		<property
+			name="tlfs"
+			column="tlfs"
+			type="string"
+			not-null="false"
+			length="140"
+		/>
+		
+		<property
+			name="idlist"
+			column="idlist"
+			type="long"
+
+		/>
+		
+		<property
+			name="filename"
+			column="filename"
+			type="string"
+			length="64"
+		/>
+		
+
+		<property
+			name="recurrencia"
+			column="recurrencia"
+			type="int"
+			length="2"
+			not-null="false"
+			
+		/>
+		
+		<property
+			name="cada_rec"
+			column="cadarec"
+			type="int"
+			length="2"
+		/>
+		
+	
+		<property name="l" column="l" type="boolean"/>
+		<property name="m" column="m" type="boolean"/>
+		<property name="mie" column="mie" type="boolean"/>
+		<property name="j" column="j" type="boolean"/>
+		<property name="v" column="v" type="boolean"/>
+		<property name="s" column="s" type="boolean"/>
+		<property name="d" column="d" type="boolean"/>
+		<property name="reporte" column="reporte" type="boolean"/>
+		
+		
+		<property
+			name="numsemana"
+			column="numsemana"
+			type="int"
+			length="2"
+		/>
+		
+		<property
+			name="body"
+			column="body"
+			type="string"
+
+		/>
+		
+		<property name="servicio" column="servicio" type="string" length="64"/>
+		
+		<property
+			name="cliente"
+			column="cliente"
+			type="string"
+		
+			length="64"
+		/>
+		
+		<property
+			name="times"
+			column="times"
+			type="int"
+			length="2"
+		/>
+	
+
+		
+	</class>	
+</hibernate-mapping>

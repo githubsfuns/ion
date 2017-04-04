@@ -1,0 +1,35 @@
+/BloqueadoDAO.java/1.3/Mon Aug 20 18:24:26 2007//
+/ClienteDAO.java/1.5/Mon Mar 23 15:29:49 2009//
+/ClienteFacturadoDAO.java/1.1/Fri Nov  7 19:05:29 2008//
+/CompraDAO.java/1.2/Mon Jan 19 22:00:22 2009//
+/ConexionDAO.java/1.1/Tue Jun  5 18:14:10 2007//
+/FabricaDAO.java/1.17/Tue Jul  6 21:22:51 2010//
+/FacturaDAO.java/1.1/Fri May 30 17:57:43 2008//
+/FarmaciaDAO.java/1.1/Mon Jan 21 18:09:36 2008//
+/GenericoDao.java/1.4/Mon Mar 23 15:29:49 2009//
+/GptDAO.java/1.2/Thu Jan  3 19:50:05 2008//
+/GrupoConexionesDAO.java/1.1/Mon Aug 20 18:24:26 2007//
+/KeywordSetDAO.java/1.2/Tue Jul  6 21:22:51 2010//
+/ListaDAO.java/1.2/Mon Mar 23 15:29:49 2009//
+/ListaDinamicaDAO.java/1.1/Fri Aug 15 21:28:21 2008//
+/LlamadaDAO.java/1.2/Mon Jan 19 22:00:22 2009//
+/ManejadorBd.java/1.13/Tue Jul  6 21:22:51 2010//
+/MedicoDAO.java/1.1/Wed Dec 12 21:12:18 2007//
+/MensajeDAO.java/1.9/Thu Mar  4 19:17:44 2010//
+/MensajePorProcesarDAO.java/1.1/Thu Mar  4 19:17:44 2010//
+/MensajeProgramadoDAO.java/1.4/Tue Nov 20 16:05:44 2007//
+/PalabraOfensivaDAO.java/1.1/Fri Aug 10 19:31:17 2007//
+/ProductoDAO.java/1.1/Wed Dec 12 21:12:18 2007//
+/RepresentanteDAO.java/1.1/Wed Dec 12 21:12:18 2007//
+/RepresentanteFarmaciaDAO.java/1.1/Mon Jan 21 18:09:36 2008//
+/RestriccionDAO.java/1.1/Fri Aug 15 22:35:47 2008//
+/ServicioDAO.java/1.1/Thu Jul 19 23:14:42 2007//
+/SesionLogDAO.java/1.1/Mon Jul 16 19:42:05 2007//
+/TxDAO.java/1.2/Thu Sep 11 22:29:20 2008//
+/UsuarioDAO.java/1.2/Tue Nov 20 16:05:44 2007//
+/VProgramadaDAO.java/1.1/Thu May 22 18:47:21 2008//
+/VentaDAO.java/1.1/Tue Jul  6 21:22:51 2010//
+/VisitaDAO.java/1.17/Thu Oct  9 16:00:21 2008//
+/VisitaDAOFarmacia.java/1.3/Thu Jan 24 14:47:30 2008//
+D/hibernate////
+D/trivia////

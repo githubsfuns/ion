@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones">
+	<class
+		name="Conexion"
+		table="conexion"
+
+	>
+		
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+		<generator class="sequence">
+                <param name="sequence">cnx_sequence</param>
+            </generator>
+		</id>
+
+	
+		<property name="nombre"	column="nombre"	type="string"	not-null="true"	length="32"	/>
+		
+		<property name="tipocnx" column="tipo" type="int" not-null="true"/>
+		
+		<property name="transrate" column="transrate" type="float"/>
+		<property name="pagados" column="pagados" type="int"/>
+		<property name="renovados" column="renovados" type="int"/>
+		<property name="encola" column="encola" type="int"/>
+		<property name="activa" column="activa" type="boolean"  />
+		<property name="recarga" column="recarga" type="boolean"/>
+		<property name="extramsgs" column="extramsgs" type="boolean"/>
+		
+		<property name="expdate" column="expdate" type="timestamp" />
+		
+		<property name="costpermsg" column="costpermsg" type="float"/>
+		<property name="costperextra" column="costperextra" type="float"/>
+
+	</class>	
+</hibernate-mapping>

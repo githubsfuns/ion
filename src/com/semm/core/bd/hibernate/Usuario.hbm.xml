@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+<hibernate-mapping package="com.semm.core.servicios">
+	<class
+		name="Usuario"
+		table="usuario"
+		dynamic-update="true"
+		optimistic-lock="dirty"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="username"
+			type="string"
+		>
+		<column name="username" ></column>
+		
+		</id>
+
+		<property
+			name="nombre"
+			column="nombre"
+			type="string"
+			length="64"
+		/>
+		<property
+			name="password"
+			column="password"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+		
+	<property
+			name="tipo"
+			column="tipo"
+			type="int"
+			length="1"
+		/>
+		
+		<property 
+			
+			optimistic-lock="true"
+			name="credits"
+			column="credits"
+			type="int"
+
+		/>
+
+		<property
+			name="logo"
+			column="logo"
+			type="string"
+			length="64"
+			
+		/>
+		
+		<property
+			name="ccs"
+			column="css"
+			type="string"
+			length="64"
+			
+		/>
+
+		<property 
+		name="accept" 
+		column="accept" 
+		type="boolean"
+		/>
+		
+		<property 
+		name="locales" 
+		column="locales" 
+		type="boolean"
+		/>
+		
+	</class>	
+</hibernate-mapping>

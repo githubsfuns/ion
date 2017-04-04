@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones">
+	<joined-subclass
+		name="ConexionJMS"
+		table="conexionjms"
+		extends="com.semm.core.conexiones.Conexion" >
+		
+		<key column="id"/>
+	
+		<property name="uri" column="url" type="string" not-null="true" length="64"/>
+		<property name="cola_in" column="cola_in" type="string" length="32"/>
+		<property name="cola_out" column="cola_out" type="string"  length="32"/>
+
+
+	</joined-subclass>	
+</hibernate-mapping>

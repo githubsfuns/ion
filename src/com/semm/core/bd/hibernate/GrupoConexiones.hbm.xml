@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.conexiones">
+	<class
+		name="GrupoConexiones"
+		table="grupoconexiones"
+
+	>
+		
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+		<generator class="sequence">
+                <param name="sequence">grpcnx_sequence</param>
+            </generator>
+		</id>
+
+	
+		<property name="nombre"	column="nombre"	type="string"	not-null="true"	length="32"	/>
+	 
+
+	 	   <set name="conexiones" table="grpcnx"  >
+        	<key column="grp"  ></key>
+        	
+        	<many-to-many class="Conexion" column="cnx"  />
+        	
+        </set> 
+	</class>	
+</hibernate-mapping>

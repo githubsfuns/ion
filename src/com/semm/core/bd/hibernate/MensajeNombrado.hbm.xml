@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.servicios">
+	<class
+		name="MensajeNombrado"
+		table="mensajenombrado"
+
+	>
+		
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+
+		</id>
+
+		<property
+			name="fechahora"
+			column="fechahora"
+			type="timestamp"
+			not-null="true"
+		/>
+		<property
+			name="msg"
+			column="msg"
+			type="string"
+			not-null="false"
+			length="255"
+		/>
+		<property
+			name="mobile"
+			column="mobile"
+			type="string"
+			not-null="true"
+			length="13"
+		/>
+	
+		<property
+			name="servicio"
+			column="servicio"
+			type="string"
+	
+			length="64"
+		/>
+		
+		<many-to-one
+			name="cliente"
+			column="cliente"
+			class="Usuario"
+			cascade="none"
+			
+		>
+		</many-to-one>
+
+		
+		
+		<property
+			name="tipo"
+			column="tipo"
+			type="int"
+			not-null="true"
+			length="1"
+		/>
+		
+		<property
+			name="subtipo"
+			column="subtipo"
+			type="int"
+			length="1"
+		/>
+		
+		<property
+			name="nombre"
+			column="nombre"
+			type="string"
+			length="64"
+		/>
+		
+		<property
+			name="apellido"
+			column="apellido"
+			type="string"
+			length="64"
+		/>
+	
+	<property
+			name="fechaentrega"
+			column="fechaentrega"
+			type="timestamp"
+		/>
+		<property name="entregado" column="entregado" type="boolean"/>
+		
+		
+
+		
+	</class>	
+</hibernate-mapping>

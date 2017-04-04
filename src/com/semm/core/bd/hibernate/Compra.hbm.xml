@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.semm.core.servicios">
+	<class name="Compra" table="compra"	>
+		 
+		<id
+			name="id"
+			type="long"
+			column="id"
+			unsaved-value="0"
+		>
+		<generator class="sequence">
+                <param name="sequence">compra_sequence</param>
+            </generator>
+		</id>
+
+		
+		<property name="fecha"	column="fecha"	type="timestamp"	not-null="true"		/>
+		
+		<property name="cantidad" column="cantidad" type="long" not-null="true"/>
+		
+
+		<property name="costosms" column="costosms" type="float"/>
+		<property name="monto" column="monto" type="float"/>
+		
+		<many-to-one name="usuario" class="Usuario"  not-null="true">
+        </many-to-one>
+
+	</class>	
+</hibernate-mapping>
